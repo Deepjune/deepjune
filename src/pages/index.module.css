@@ -1,23 +1,131 @@
-/**
- * CSS files with the .module.css suffix will be treated as CSS modules
- * and scoped locally.
- */
+/* --- 공통 섹션 스타일 --- */
+.section {
+  padding: 6rem 0;
+}
 
-.heroBanner {
-  padding: 4rem 0;
+.sectionGray {
+  background-color: var(--ifm-background-surface-color);
+}
+
+.sectionTitle {
   text-align: center;
-  position: relative;
-  overflow: hidden;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  font-weight: 600;
 }
 
-@media screen and (max-width: 996px) {
-  .heroBanner {
-    padding: 2rem;
-  }
+.sectionContent {
+  max-width: 720px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  line-height: 1.8;
 }
 
-.buttons {
-  display: flex;
+/* --- About 섹션 스타일 추가 --- */
+.aboutGrid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 4rem;
   align-items: center;
+}
+
+.aboutText h3 {
+  font-size: 2.5rem;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+
+.aboutText p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+
+.historySection h4 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: var(--ifm-color-primary);
+}
+
+.historyList {
+  list-style: none;
+  padding: 0;
+}
+
+.historyList li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.historyList li:last-child {
+  border-bottom: none;
+}
+
+.aboutImageContainer {
+  display: flex;
   justify-content: center;
+  align-items: center;
+}
+
+.aboutImage {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border-radius: 16px;
+  object-fit: cover;
+  box-shadow: var(--ifm-global-shadow-lg);
+}
+
+
+/* --- 프로젝트 섹션 --- */
+.projectGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.projectCard {
+  background-color: var(--ifm-card-background-color);
+  border-radius: var(--ifm-card-border-radius);
+  padding: 2rem;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.projectCard:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--ifm-global-shadow-md);
+}
+
+.projectCard h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: var(--ifm-color-primary);
+}
+
+.projectCard p {
+  margin-bottom: 1.5rem;
+  color: var(--ifm-font-color-secondary);
+}
+
+.projectCard a {
+  font-weight: 600;
+}
+
+/* --- 모바일 반응형 --- */
+@media screen and (max-width: 996px) {
+  .section {
+    padding: 4rem 1rem;
+  }
+  .sectionTitle {
+    font-size: 2rem;
+  }
+  
+  .aboutGrid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .aboutImageContainer {
+    order: -1;
+  }
 }

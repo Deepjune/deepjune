@@ -1,25 +1,28 @@
 import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
+
 const config: Config = {
-  title: 'TITLE',
-  tagline: 'ALTRUISTICHIVE',
+  // --- 사이트 기본 정보 ---
+  title: 'Deepjune',
+  tagline: '성실함으로 꾸준히 성장하는 네트워크 엔지니어, Deepjune입니다.',
   favicon: 'img/favicon.svg',
-future: {
+
+  // --- 배포 정보 ---
+  future: {
     v4: true,
   },
   url: 'https://deepjune.altruistic-hive.org',
   baseUrl: '/',
-
   organizationName: 'deepjune',
-  projectName: '<repo_name>', 
+  projectName: 'your-repo-name', // 실제 GitHub 저장소 이름으로 변경
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
 
   i18n: {
     defaultLocale: 'ko',
-    locales: ['ko','en'],
+    locales: ['ko'],
   },
 
   presets: [
@@ -28,16 +31,11 @@ future: {
       {
         docs: {
           sidebarPath: './sidebars.ts',
+          routeBasePath: '/docs',
         },
         blog: {
           showReadingTime: true,
-          feedOptions: {
-            type: ['rss', 'atom'],
-            xslt: true,
-          },
-          onInlineTags: 'warn',
-          onInlineAuthors: 'warn',
-          onUntruncatedBlogPosts: 'warn',
+          routeBasePath: '/blog',
         },
         theme: {
           customCss: './src/css/custom.css',
@@ -47,11 +45,10 @@ future: {
   ],
 
   themeConfig: {
-    image: 'img/favicon.svg',
     navbar: {
-      title: 'TITLE',
+      title: 'Deepjune',
       logo: {
-        alt: 'TITLE',
+        alt: 'Deepjune Logo',
         src: 'img/favicon.svg',
       },
       items: [
@@ -59,9 +56,13 @@ future: {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
           position: 'left',
-          label: 'Tutorial',
+          label: '문서',
         },
-        {to: '/blog', label: 'Blog', position: 'left'},
+        {
+          to: '/blog', 
+          label: '블로그', 
+          position: 'left'
+        },
         {
           href: 'https://github.com/altruistic-hive',
           label: 'GitHub',
@@ -69,51 +70,13 @@ future: {
         },
       ],
     },
+    // --- 푸터 설정 ---
     footer: {
       style: 'dark',
-      links: [
-        {
-          title: 'Docs',
-          items: [
-            {
-              label: 'Tutorial',
-              to: '/docs/intro',
-            },
-          ],
-        },
-        {
-          title: 'Community',
-          items: [
-            {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-            },
-            {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
-            },
-            {
-              label: 'X',
-              href: 'https://x.com/docusaurus',
-            },
-          ],
-        },
-        {
-          title: 'More',
-          items: [
-            {
-              label: 'Blog',
-              to: '/blog',
-            },
-            {
-              label: 'GitHub',
-              href: 'https://github.com/altruistic-hive',
-            },
-          ],
-        },
-      ],
-      copyright: `Copyright © ${new Date().getFullYear()} TIL, Inc. Built with Docusaurus.`,
+      links: [],
+      copyright: `Copyright © ${new Date().getFullYear()} Deepjune. Built with Docusaurus.`,
     },
+    // --- 코드 블럭 테마 ---
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,

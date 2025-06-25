@@ -1,0 +1,104 @@
+.heroBanner {
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    background-color: var(--ifm-background-color);
+    border-bottom: none;
+  }
+  
+  .heroTitle {
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+  
+  .heroSubtitle {
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: var(--ifm-font-color-secondary);
+    margin-bottom: 2rem;
+    min-height: 2.5em; 
+    display: inline-block;
+  }
+  
+  .socialLinks {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+  }
+  
+  .socialLink {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+    color: var(--ifm-font-color-base);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  
+  .socialLink:hover {
+    color: var(--ifm-color-primary);
+    text-decoration: none;
+  }
+  
+  .typingCursor {
+    animation: blink 0.7s infinite;
+    margin-left: 0.25rem;
+    font-weight: 200;
+    color: var(--ifm-color-primary);
+  }
+  
+  @keyframes blink {
+    50% {
+      opacity: 0;
+    }
+  }
+  
+  .scrollArrowContainer {
+    position: absolute;
+    bottom: 4rem;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: bounce 2s infinite;
+  }
+  
+  .scrollArrow {
+    width: 24px;
+    height: 24px;
+    border-left: 2px solid var(--ifm-font-color-secondary);
+    border-bottom: 2px solid var(--ifm-font-color-secondary);
+    transform: rotate(-45deg);
+  }
+  
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateX(-50%) translateY(0);
+    }
+    40% {
+      transform: translateX(-50%) translateY(-10px);
+    }
+    60% {
+      transform: translateX(-50%) translateY(-5px);
+    }
+  }
+
+  @media screen and (max-width: 996px) {
+    .heroBanner {
+      padding: 0 1rem;
+    }
+    .heroTitle {
+      font-size: 3rem;
+    }
+    .heroSubtitle {
+      font-size: 1.25rem;
+      min-height: 3em; 
+    }
+  }
